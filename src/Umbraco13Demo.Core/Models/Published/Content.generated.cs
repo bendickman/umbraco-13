@@ -18,14 +18,24 @@ using Umbraco.Extensions;
 
 namespace Umbraco13Demo.Core.Models.Published
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContent, IHeroProperties
+	// Mixin Content Type with alias "content"
+	/// <summary>Content</summary>
+	public partial interface IContent : IPublishedElement
+	{
+		/// <summary>Main Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainContent { get; }
+	}
+
+	/// <summary>Content</summary>
+	[PublishedModel("content")]
+	public partial class Content : PublishedElementModel, IContent
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "content";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
@@ -34,14 +44,14 @@ namespace Umbraco13Demo.Core.Models.Published
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Content, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Home(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public Content(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -55,30 +65,11 @@ namespace Umbraco13Demo.Core.Models.Published
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainContent")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainContent => global::Umbraco13Demo.Core.Models.Published.Content.GetMainContent(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainContent => GetMainContent(this, _publishedValueFallback);
 
-		///<summary>
-		/// Hero Description
-		///</summary>
+		/// <summary>Static getter for Main Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("heroDescription")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString HeroDescription => global::Umbraco13Demo.Core.Models.Published.HeroProperties.GetHeroDescription(this, _publishedValueFallback);
-
-		///<summary>
-		/// Hero Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("heroImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeroImage => global::Umbraco13Demo.Core.Models.Published.HeroProperties.GetHeroImage(this, _publishedValueFallback);
-
-		///<summary>
-		/// Hero Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("heroTitle")]
-		public virtual string HeroTitle => global::Umbraco13Demo.Core.Models.Published.HeroProperties.GetHeroTitle(this, _publishedValueFallback);
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetMainContent(IContent that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "mainContent");
 	}
 }

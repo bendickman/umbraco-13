@@ -1,0 +1,1 @@
+﻿global using ContentModels = Umbraco13Demo.Core.Models.Published;

@@ -3,7 +3,7 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -15,10 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/styles.css" rel="stylesheet" />
-    <!-- angularjs -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
 </head>
 <body>
+    @await Component.InvokeAsync("Navigation", Model)
     @await Html.PartialAsync("~/Views/Partials/_header.cshtml")
 
     @RenderBody()
