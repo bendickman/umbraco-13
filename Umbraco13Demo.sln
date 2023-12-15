@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco13Demo.Web", "src\Umbraco13Demo.Web\Umbraco13Demo.Web.csproj", "{5FCC91FE-CFA8-4027-B9F7-6A800C6DD0C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco13Demo.Core", "src\Umbraco13Demo.Core\Umbraco13Demo.Core.csproj", "{DA99A046-8243-475E-ACC4-6D562D1E290C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5FCC91FE-CFA8-4027-B9F7-6A800C6DD0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FCC91FE-CFA8-4027-B9F7-6A800C6DD0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FCC91FE-CFA8-4027-B9F7-6A800C6DD0C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA99A046-8243-475E-ACC4-6D562D1E290C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA99A046-8243-475E-ACC4-6D562D1E290C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA99A046-8243-475E-ACC4-6D562D1E290C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA99A046-8243-475E-ACC4-6D562D1E290C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
