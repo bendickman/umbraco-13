@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+    var row = (ContentModels.RichTextBlock)Model.Content;
+    var settings = (ContentModels.RichTextBlockSettings)Model.Settings;
+
+    if (settings?.Hide ?? false)
+    {
+        return;
+    }
+}
+
+<div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        @row.BodyText
+    </div>
+</div>
