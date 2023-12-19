@@ -55,7 +55,7 @@ namespace Umbraco13Demo.Core.Models.Published
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainContent")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainContent => global::Umbraco13Demo.Core.Models.Published.Content.GetMainContent(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent => global::Umbraco13Demo.Core.Models.Published.Content.GetMainContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Hero Description

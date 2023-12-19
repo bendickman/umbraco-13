@@ -18,24 +18,23 @@ using Umbraco.Extensions;
 
 namespace Umbraco13Demo.Core.Models.Published
 {
-	// Mixin Content Type with alias "content"
-	/// <summary>Content Properties</summary>
-	public partial interface IContent : IPublishedElement
+	// Mixin Content Type with alias "blockVisibilitySettings"
+	/// <summary>Block Visibility Settings</summary>
+	public partial interface IBlockVisibilitySettings : IPublishedElement
 	{
-		/// <summary>Main Content</summary>
+		/// <summary>Hide</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent { get; }
+		bool Hide { get; }
 	}
 
-	/// <summary>Content Properties</summary>
-	[PublishedModel("content")]
-	public partial class Content : PublishedElementModel, IContent
+	/// <summary>Block Visibility Settings</summary>
+	[PublishedModel("blockVisibilitySettings")]
+	public partial class BlockVisibilitySettings : PublishedElementModel, IBlockVisibilitySettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		public new const string ModelTypeAlias = "content";
+		public new const string ModelTypeAlias = "blockVisibilitySettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
@@ -44,14 +43,14 @@ namespace Umbraco13Demo.Core.Models.Published
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Content, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<BlockVisibilitySettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Content(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public BlockVisibilitySettings(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -60,16 +59,14 @@ namespace Umbraco13Demo.Core.Models.Published
 		// properties
 
 		///<summary>
-		/// Main Content
+		/// Hide
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainContent")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent => GetMainContent(this, _publishedValueFallback);
+		[ImplementPropertyType("hide")]
+		public virtual bool Hide => GetHide(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Main Content</summary>
+		/// <summary>Static getter for Hide</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.0.1+36b7b86")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockListModel GetMainContent(IContent that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(publishedValueFallback, "mainContent");
+		public static bool GetHide(IBlockVisibilitySettings that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "hide");
 	}
 }

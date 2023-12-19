@@ -5,7 +5,5 @@
 }
 
 <main class="mb-4">
-    <div class="container px-4 px-lg-5">
-        @Model.MainContent
-    </div>
+    @Html.GetBlockListHtml(Model.MainContent)
 </main>
