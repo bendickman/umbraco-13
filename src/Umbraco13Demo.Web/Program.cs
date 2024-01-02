@@ -1,3 +1,5 @@
+using Umbraco13Demo.Web.Setup;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -5,6 +7,7 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddDeliveryApi()
     .AddComposers()
+    .AddServices()
     .Build();
 
 WebApplication app = builder.Build();
